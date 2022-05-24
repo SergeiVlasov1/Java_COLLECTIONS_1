@@ -17,22 +17,11 @@ class GameTest {
 
     @BeforeEach
     void shouldRegisterAllPlayers() {
-        game.registerAll(List.of(player1, player2, player3, player4));
-    }
+        game.register(player1);
+        game.register(player2);
+        game.register(player3);
+        game.register(player4);
 
-    @Test
-    void shouldFindAllRegisteredPlayers() {
-        assertEquals(List.of(player1, player2, player3, player4), game.findAll());
-    }
-
-    @Test
-    void shouldFindByNameWhenRegister() {
-        assertEquals(player3, game.findByName("Александр Волкановски"));
-    }
-
-    @Test
-    void shouldReturnNullWhenNotRegister() {
-        assertNull(game.findByName("Дэвид Дворак"));
     }
 
     @Test
